@@ -38,6 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Mark a task as completed
+    const toggleCompleted = index => {
+        console.log(tasks[index].text);
+        tasks[index].completed = !tasks[index].completed;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        renderTasks();
+    }
+
     // Edit a task
     const editTask = index => {
         const newText = prompt('Enter the new task text:', tasks[index].text);
@@ -54,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
     taskList.addEventListener('click', function (event) {
         if (event.target.classList.contains('edit-icon')) {
             editTask(parseInt(event.target.getAttribute('data-index')));
+        }
+        else if (event.target.classList.contains('mark-complete-icon')) {
+            toggleCompleted(parseInt(event.target.getAttribute('data-index')));
         }
     });
 
