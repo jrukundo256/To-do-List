@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
     // Render tasks
-    function renderTasks() {
+    const renderTasks = () => {
         taskList.innerHTML = '';
         tasks.forEach(function (task, index) {
             const listItem = document.createElement('li');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add a new task
-    function addTask() {
+    const addTask = () => {
         const text = taskInput.value.trim();
         if (text !== '') {
             const task = {
@@ -38,8 +38,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Edit a task
+    const editTask = index => {
+        const newText = prompt('Enter the new task text:', tasks[index].text);
+        if (newText !== null) {
+            tasks[index].text = newText.trim();
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            renderTasks();
+        }
+    }
+
     // Event listeners
     addTaskBtn.addEventListener('click', addTask);
+
+    taskList.addEventListener('click', function (event) {
+        if (event.target.classList.contains('edit-icon')) {
+            editTask(parseInt(event.target.getAttribute('data-index')));
+        }
+    });
 
     // Initial render
     renderTasks();
