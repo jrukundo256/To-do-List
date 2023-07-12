@@ -17,8 +17,9 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+h2 {
     text-align: center;
+    /* font-weight: 500; */
 }
 
 input[type="text"] {
@@ -26,7 +27,7 @@ input[type="text"] {
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #444;
 }
 
 button {
@@ -35,4 +36,51 @@ button {
     background-color: #4caf50;
     color: #fff;
     cursor: pointer;
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.task-text {
+    flex-grow: 1;
+}
+
+.task-actions {
+    margin-left: 10px;
+}
+
+.mark-complete-icon {
+    color: #4caf50;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit-icon {
+    color: #555;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.delete-icon {
+    color: red;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
 }
