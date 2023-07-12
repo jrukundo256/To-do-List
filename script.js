@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Delete a task
+    const deleteTask = index => {
+        tasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        renderTasks();
+    }
+
     // Event listeners
     addTaskBtn.addEventListener('click', addTask);
 
@@ -65,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if (event.target.classList.contains('mark-complete-icon')) {
             toggleCompleted(parseInt(event.target.getAttribute('data-index')));
+        }
+        else if (event.target.classList.contains('delete-icon')) {
+            deleteTask(parseInt(event.target.getAttribute('data-index')));
         }
     });
 
