@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <span class="task-actions">
             <i class="fas fa-check mark-complete-icon" data-index="${index}"></i>
             <i class="fas fa-edit edit-icon" data-index="${index}"></i>
-            <i class="fas fa-trash delete-icon" data-index="${index}"></i>
+            <i class="fas fa-times delete-icon" data-index="${index}"></i>
           </span>
         `;
             taskList.appendChild(listItem);

@@ -3,8 +3,7 @@
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    color: #102a43;
-    background-color: #f0f0f0;
+    background-color: #F3F8FF;
     margin: 0;
     padding: 0;
 }
@@ -13,32 +12,45 @@ body {
     max-width: 600px;
     margin: 40px auto;
     background-color: #fff;
-    padding: 20px;
+    border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    text-align: center;
-    /* font-weight: 500; */
+header {
+    background: #E6F2FE;
+    padding: 25px;
+    border-radius: 15px 15px 0 0;=
 }
 
 input[type="text"] {
     width: 80%;
     padding: 10px;
     font-size: 16px;
-    border: none;
-    border: 1px solid #444;
+    border: 1px solid #2A62FE;
+    opacity: 0.5;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px;
     border: none;
-    background-color: #4caf50;
+    border-radius: 5px;
+    background-color: #2A62FE;
     color: #fff;
     cursor: pointer;
 }
 
 
+.current-tasks {
+    padding: 10px 25px;
+}
+
+.current-tasks h3 {
+    color: #1D1F28;
+    background: #F0F0F0;
+    border-radius: 5px;
+    padding: 15px;
+}
 
 
 ul {
@@ -50,8 +62,9 @@ li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .task-text {
@@ -64,18 +77,30 @@ li {
 
 .mark-complete-icon {
     color: #4caf50;
+    border: 1px solid #4caf50;
+    opacity: 0.7;
+    border-radius: 5px;
+    padding: 5px;
     cursor: pointer;
     margin-right: 10px;
 }
 
 .edit-icon {
-    color: #555;
+    color: #2A62FE;
+    border: 1px solid #2A62FE;
+    opacity: 0.5;
+    border-radius: 5px;
+    padding: 5px;
     cursor: pointer;
     margin-right: 10px;
 }
 
 .delete-icon {
     color: red;
+    border: 1px solid red;
+    opacity: 0.5;
+    border-radius: 5px;
+    padding: 5px 7px;
     cursor: pointer;
     margin-right: 10px;
 }
